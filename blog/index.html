@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News &amp; Insights | Fiduciary Tax &amp; Accounting Services</title>
+  <meta name="description" content="Tax law updates, estate planning insights, and fiduciary guidance from FTAS — written for executors, trustees, and the families navigating them.">
+  <link rel="canonical" href="https://fiduciary.tax/blog/index.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="News &amp; Insights | Fiduciary Tax &amp; Accounting Services">
+  <meta property="og:description" content="Tax law updates, estate planning insights, and fiduciary guidance from FTAS.">
+  <meta property="og:url" content="https://fiduciary.tax/blog/index.html">
+  <meta property="og:site_name" content="Fiduciary Tax &amp; Accounting Services">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css?v=20260711">
+</head>
+<body>
+
+  <div class="blog-hero">
+    <div class="blog-hero-inner">
+      <div class="hero-eyebrow">Fiduciary Tax &amp; Accounting Services</div>
+      <h1>News &amp; Insights</h1>
+      <p>Tax law updates, estate planning guidance, and fiduciary tax commentary — written in plain language for executors, trustees, and the families navigating them.</p>
+    </div>
+  </div>
+
+  <div class="blog-filters">
+    <div class="blog-filters-inner" id="filterBar">
+      <button class="filter-btn active" onclick="filterPosts('all', this)">All</button>
+    </div>
+  </div>
+
+  <div class="blog-grid" id="blogGrid">
+    <p style="color:var(--muted);font-size:14px;">Loading...</p>
+  </div>
+
+  <script src="../shared.js?v=20260711"></script>
+  <script>
+    let allPosts = [];
+    let activeFilter = 'all';
+
+    function formatDate(d) {
+      const dt = new Date(d + 'T00:00:00');
+      return dt.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+
+    function esc(s) {
+      return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function renderPosts(posts) {
+      const grid = document.getElementById('blogGrid');
+      if (!posts.length) {
+        grid.innerHTML = '<p class="blog-empty">No posts in this category yet.</p>';
+        return;
+      }
+      grid.innerHTML = posts.map(p => `
+        <a href="${p.slug}.html" class="blog-card">
+          <div class="blog-card-cat">${esc(p.category)}</div>
+          <h3>${esc(p.title)}</h3>
+          <p>${esc(p.excerpt)}</p>
+          <div class="blog-card-meta">${formatDate(p.date)}</div>
+        </a>
+      `).join('');
+    }
+
+    function filterPosts(cat, btn) {
+      activeFilter = cat;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filtered = cat === 'all' ? allPosts : allPosts.filter(p => p.category === cat);
+      renderPosts(filtered);
+    }
+
+    function buildFilters(posts) {
+      const cats = [...new Set(posts.map(p => p.category))];
+      const bar = document.getElementById('filterBar');
+      cats.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.className = 'filter-btn';
+        btn.textContent = cat;
+        btn.onclick = () => filterPosts(cat, btn);
+        bar.appendChild(btn);
+      });
+    }
+
+    fetch('posts.json')
+      .then(r => r.json())
+      .then(posts => {
+        allPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+        buildFilters(allPosts);
+        renderPosts(allPosts);
+      })
+      .catch(() => {
+        document.getElementById('blogGrid').innerHTML = '<p class="blog-empty">Unable to load posts. Please try again later.</p>';
+      });
+  </script>
+</body>
+</html>

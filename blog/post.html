@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading... | FTAS</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css?v=20260711">
+</head>
+<body>
+
+  <div id="postHero" class="post-hero">
+    <div class="post-hero-inner">
+      <div class="post-cat" id="postCat"></div>
+      <h1 id="postTitle">Loading...</h1>
+      <div class="post-meta" id="postMeta"></div>
+    </div>
+  </div>
+
+  <div class="post-body" id="postBody">
+    <a href="index.html" class="post-back">Back to News &amp; Insights</a>
+    <div id="postContent"></div>
+    <div class="post-cta">
+      <div>
+        <h3>Have questions about your situation?</h3>
+        <p>Every estate and trust situation is different — reach out and we'll walk you through what's needed.</p>
+      </div>
+      <a href="../index.html#contact" class="btn-primary">Contact Us</a>
+    </div>
+    <a href="index.html" class="post-back" style="margin-top:1rem;margin-bottom:0;">Back to News &amp; Insights</a>
+  </div>
+
+  <script src="../shared.js?v=20260711"></script>
+  <script>
+    function formatDate(d) {
+      const dt = new Date(d + 'T00:00:00');
+      return dt.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('slug');
+
+    if (!slug) {
+      window.location.href = 'index.html';
+    } else if (/^[a-z0-9-]+$/.test(slug)) {
+      // Old links used post.html?slug=... — posts now live at static pages
+      window.location.replace(slug + '.html');
+    } else {
+      fetch('posts.json')
+        .then(r => r.json())
+        .then(posts => {
+          const post = posts.find(p => p.slug === slug);
+          if (!post) { window.location.href = 'index.html'; return; }
+
+          document.title = post.title + ' | FTAS';
+          document.getElementById('postCat').textContent = post.category;
+          document.getElementById('postTitle').textContent = post.title;
+          document.getElementById('postMeta').textContent = formatDate(post.date);
+          document.getElementById('postContent').innerHTML = post.body;
+
+          // Update meta description
+          const meta = document.createElement('meta');
+          meta.name = 'description';
+          meta.content = post.excerpt;
+          document.head.appendChild(meta);
+        })
+        .catch(() => { window.location.href = 'index.html'; });
+    }
+  </script>
+</body>
+</html>
