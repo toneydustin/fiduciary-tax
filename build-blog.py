@@ -57,7 +57,7 @@ TEMPLATE = """<!DOCTYPE html>
     <div class="post-hero-inner">
       <div class="post-cat">{category}</div>
       <h1>{title}</h1>
-      <div class="post-meta">{pretty_date}</div>
+      <div class="post-meta">By Dustin C. Toney, EA &nbsp;·&nbsp; {pretty_date}</div>
     </div>
   </div>
 
@@ -82,7 +82,7 @@ TEMPLATE = """<!DOCTYPE html>
 
 def pretty(d):
     dt = date.fromisoformat(d)
-    return dt.strftime("%B %-d, %Y")
+    return dt.strftime("%B %#d, %Y")
 
 
 def main():
