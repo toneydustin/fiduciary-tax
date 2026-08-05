@@ -274,6 +274,19 @@ footer{background:var(--navy);border-top:1px solid rgba(184,148,63,0.18);padding
 .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold);box-shadow:0 0 0 2px rgba(184,148,63,0.3);}
 
 /* RESPONSIVE */
+@media(max-width:1280px){
+  nav{padding:0 1.5rem;}
+  .nav-logo-sub{display:none;}
+  .nav-logo-name{font-size:15px;}
+  .nav-logo-mark{height:42px;}
+  .nav-logo{gap:10px;}
+  .nav-links{gap:1rem;}
+  .nav-links a{font-size:11px;letter-spacing:0.05em;}
+  .nav-portal{padding:6px 12px!important;}
+}
+@media(max-width:1140px){
+  .nav-logo-text{display:none;}
+}
 @media(max-width:1024px){
   nav{padding:0 1.25rem;}
   .nav-links{display:none;}
