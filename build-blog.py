@@ -15,7 +15,7 @@ from html import escape
 from email.utils import format_datetime
 
 SITE = "https://fiduciary.tax"
-ASSET_V = "?v=20260805c"  # bump on each deploy to bust caches
+ASSET_V = "?v=20260805d"  # bump on each deploy to bust caches
 
 TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
