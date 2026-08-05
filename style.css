@@ -227,6 +227,10 @@ footer{background:var(--navy);border-top:1px solid rgba(184,148,63,0.18);padding
 /* FAQ */
 .faq-section{margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border);}
 .faq-section h2{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:500;color:var(--navy);margin-bottom:1.25rem;}
+.related-articles{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
+.related-articles li{font-size:14px;line-height:1.6;}
+.related-articles a{color:var(--navy);text-decoration:none;border-bottom:1px solid var(--border);transition:border-color 0.2s;}
+.related-articles a:hover{border-color:var(--gold);color:var(--gold);}
 .faq-item{border:1px solid var(--border);border-radius:6px;margin-bottom:0.5rem;overflow:hidden;}
 .faq-item summary{padding:1rem 1.25rem;font-size:14px;font-weight:500;color:var(--navy);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
 .faq-item summary::after{content:'+';font-size:18px;color:var(--gold);flex-shrink:0;transition:transform 0.2s;}
