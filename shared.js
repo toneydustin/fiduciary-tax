@@ -19,9 +19,11 @@ function buildNav() {
     <li><a href="${p}individual.html">Individual</a></li>
     <li><a href="${p}blog/index.html">News &amp; Insights</a></li>
     <li><a href="${p}index.html#contact">Contact</a></li>
-    <li><a href="https://portal.fiduciary.tax" target="_blank" rel="noopener" class="nav-portal">Client Portal</a></li>
   </ul>
-  <button class="nav-hamburger" onclick="toggleNav()" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <div class="nav-right">
+    <a href="https://portal.fiduciary.tax" target="_blank" rel="noopener" class="nav-portal">Client Portal</a>
+    <button class="nav-hamburger" onclick="toggleNav()" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
 </nav><div class="divider-gold"></div>`;
 }
 
