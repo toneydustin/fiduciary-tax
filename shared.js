@@ -10,7 +10,8 @@ function getP() {
 
 function buildNav() {
   const p = getP();
-  return `<nav>
+  return `<a href="#main-content" class="skip-link">Skip to main content</a>
+<nav>
   <a href="${p}index.html" class="nav-logo">${BRAND_SVG}<span class="nav-logo-text"><span class="nav-logo-name">Fiduciary Tax &amp; Accounting Services</span><span class="nav-logo-sub">Estate &middot; Trust &middot; Fiduciary Tax</span></span></a>
   <ul class="nav-links" id="navLinks">
     <li><a href="${p}professional-fiduciaries.html">Professional Fiduciaries</a></li>
@@ -20,7 +21,7 @@ function buildNav() {
     <li><a href="${p}index.html#contact">Contact</a></li>
     <li><a href="https://portal.fiduciary.tax" target="_blank" rel="noopener" class="nav-portal">Client Portal</a></li>
   </ul>
-  <button class="nav-hamburger" onclick="toggleNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="nav-hamburger" onclick="toggleNav()" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav><div class="divider-gold"></div>`;
 }
 
@@ -32,7 +33,12 @@ function buildFooter() {
 </div></footer>`;
 }
 
-function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+function toggleNav() {
+  const links = document.getElementById('navLinks');
+  const btn = document.querySelector('.nav-hamburger');
+  links.classList.toggle('open');
+  btn.setAttribute('aria-expanded', links.classList.contains('open'));
+}
 
 function switchService(audienceId, which, btn) {
   const panel = document.getElementById('audience-' + audienceId);

@@ -13,10 +13,12 @@
   <meta property="og:site_name" content="Fiduciary Tax &amp; Accounting Services">
   <meta property="og:image" content="https://fiduciary.tax/og-image.png">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="alternate" type="application/rss+xml" title="FTAS News &amp; Insights" href="https://fiduciary.tax/feed.xml">
   <link rel="stylesheet" href="../style.css?v=20260805">
 </head>
 <body>
 
+  <main id="main-content">
   <div class="blog-hero">
     <div class="blog-hero-inner">
       <div class="hero-eyebrow">Fiduciary Tax &amp; Accounting Services</div>
@@ -27,13 +29,15 @@
 
   <div class="blog-filters">
     <div class="blog-filters-inner" id="filterBar">
-      <button class="filter-btn active" onclick="filterPosts('all', this)">All</button>
+      <button class="filter-btn active" aria-pressed="true" onclick="filterPosts('all', this)">All</button>
     </div>
   </div>
 
   <div class="blog-grid" id="blogGrid">
     <p style="color:var(--muted);font-size:14px;">Loading...</p>
   </div>
+
+  </main>
 
   <script src="../shared.js?v=20260805"></script>
   <script>
@@ -58,7 +62,7 @@
       grid.innerHTML = posts.map(p => `
         <a href="${p.slug}.html" class="blog-card">
           <div class="blog-card-cat">${esc(p.category)}</div>
-          <h3>${esc(p.title)}</h3>
+          <h2>${esc(p.title)}</h2>
           <p>${esc(p.excerpt)}</p>
           <div class="blog-card-meta">By Dustin C. Toney, EA &nbsp;·&nbsp; ${formatDate(p.date)}</div>
         </a>
@@ -67,8 +71,12 @@
 
     function filterPosts(cat, btn) {
       activeFilter = cat;
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
       const filtered = cat === 'all' ? allPosts : allPosts.filter(p => p.category === cat);
       renderPosts(filtered);
     }
@@ -80,6 +88,7 @@
         const btn = document.createElement('button');
         btn.className = 'filter-btn';
         btn.textContent = cat;
+        btn.setAttribute('aria-pressed', 'false');
         btn.onclick = () => filterPosts(cat, btn);
         bar.appendChild(btn);
       });

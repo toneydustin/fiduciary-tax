@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FTAS News &amp; Insights</title>
+    <link>https://fiduciary.tax/blog/index.html</link>
+    <description>Tax law updates, estate planning insights, and fiduciary guidance from Fiduciary Tax &amp; Accounting Services.</description>
+    <language>en-us</language>
+    <atom:link href="https://fiduciary.tax/feed.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Wed, 05 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Trusts Hit the 37% Tax Bracket at Just $16,000 in 2026 — Here&#x27;s How Trustees Can Avoid Overpaying</title>
+      <link>https://fiduciary.tax/blog/trust-tax-brackets-2026-distribution-strategy.html</link>
+      <description>A trust reaches the top 37% federal tax bracket at only $16,000 of income in 2026 — a threshold an individual wouldn&#x27;t hit until earning over $626,000. With the third-quarter estimated tax deadline approaching on September 15, here&#x27;s why trust brackets are so compressed and the distribution strategy trustees can use to avoid unnecessary tax.</description>
+      <pubDate>Tue, 04 Aug 2026 12:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://fiduciary.tax/blog/trust-tax-brackets-2026-distribution-strategy.html</guid>
+      <category>Estate &amp; Trust Tax</category>
+    </item>
+    <item>
+      <title>The IRS Just Labeled a Popular Charitable Trust Strategy a &#x27;Listed Transaction&#x27; — Here&#x27;s What Trustees Need to Know</title>
+      <link>https://fiduciary.tax/blog/crat-listed-transaction-2026.html</link>
+      <description>New final regulations identify a specific charitable remainder annuity trust structure as an abusive &#x27;listed transaction,&#x27; triggering IRS disclosure duties and steep penalties for trustees and beneficiaries who used it. If your CRAT involved a single premium immediate annuity, a 90-day disclosure clock may already be running.</description>
+      <pubDate>Tue, 21 Jul 2026 12:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://fiduciary.tax/blog/crat-listed-transaction-2026.html</guid>
+      <category>Estate &amp; Trust Tax</category>
+    </item>
+    <item>
+      <title>Trump Accounts Are Open: What Parents and Grandparents Should Know</title>
+      <link>https://fiduciary.tax/blog/trump-accounts-open-2026.html</link>
+      <description>As of July 4, 2026, anyone can contribute to a Trump account for a child under 18. Here&#x27;s how the new accounts actually work — the contribution limits, the investment restrictions, the $1,000 federal seed money, and the tax treatment most coverage glosses over.</description>
+      <pubDate>Mon, 06 Jul 2026 12:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://fiduciary.tax/blog/trump-accounts-open-2026.html</guid>
+      <category>Tax Law Updates</category>
+    </item>
+    <item>
+      <title>Contributing to a Trump Account? The Gift Tax Rule to Know Before You Do</title>
+      <link>https://fiduciary.tax/blog/trump-accounts-gift-tax-709.html</link>
+      <description>Under the tax code as written, every contribution to a Trump account is technically a gift of a future interest — which would normally require a Form 709 filing no matter how small the gift. New IRS guidance creates a safe harbor, but it comes with conditions that are easy to trip.</description>
+      <pubDate>Tue, 30 Jun 2026 12:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://fiduciary.tax/blog/trump-accounts-gift-tax-709.html</guid>
+      <category>Estate &amp; Trust Tax</category>
+    </item>
+    <item>
+      <title>The Estate Tax Exemption Just Got Bigger — And This Time It&#x27;s Permanent</title>
+      <link>https://fiduciary.tax/blog/estate-exemption-2026-obbba.html</link>
+      <description>The One Big Beautiful Bill permanently raised the federal estate and gift tax exemption to $15 million per person. Here&#x27;s what that means for estates, surviving spouses, and anyone who was waiting on the old sunset.</description>
+      <pubDate>Wed, 01 Apr 2026 12:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://fiduciary.tax/blog/estate-exemption-2026-obbba.html</guid>
+      <category>Tax Law Updates</category>
+    </item>
+    <item>
+      <title>The Portability Deadline Most Families Miss — And What It Costs Them</title>
+      <link>https://fiduciary.tax/blog/portability-deadline-missed.html</link>
+      <description>Filing Form 706 to preserve the Deceased Spousal Unused Exclusion is one of the most valuable elections in estate tax law — and one of the most frequently missed. Here&#x27;s what it is, why it matters, and what happens if the deadline passes.</description>
+      <pubDate>Sun, 15 Mar 2026 12:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://fiduciary.tax/blog/portability-deadline-missed.html</guid>
+      <category>Estate &amp; Trust Tax</category>
+    </item>
+    <item>
+      <title>Inherited IRAs in 2026: The 10-Year Rule and What Beneficiaries Need to Know</title>
+      <link>https://fiduciary.tax/blog/inherited-ira-secure-act-2026.html</link>
+      <description>The SECURE Act fundamentally changed how inherited IRAs work for most beneficiaries. Four years in, there&#x27;s still widespread confusion — including about whether annual distributions are required during the 10-year period.</description>
+      <pubDate>Fri, 20 Feb 2026 12:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://fiduciary.tax/blog/inherited-ira-secure-act-2026.html</guid>
+      <category>Retirement &amp; RMDs</category>
+    </item>
+    <item>
+      <title>QCDs Are More Valuable Than Ever in 2026 — Here&#x27;s Why</title>
+      <link>https://fiduciary.tax/blog/qcd-2026-obbba-changes.html</link>
+      <description>The One Big Beautiful Bill changed the rules on charitable deductions for itemizers — which makes Qualified Charitable Distributions from IRAs an even more powerful tool for retirees who give to charity.</description>
+      <pubDate>Sat, 10 Jan 2026 12:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://fiduciary.tax/blog/qcd-2026-obbba-changes.html</guid>
+      <category>Retirement &amp; RMDs</category>
+    </item>
+  </channel>
+</rss>

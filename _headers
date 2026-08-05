@@ -26,6 +26,11 @@
 /blog/posts.json
   Cache-Control: public, max-age=3600
 
+# RSS feed
+/feed.xml
+  Cache-Control: public, max-age=3600
+  Content-Type: application/rss+xml; charset=utf-8
+
 # OG image
 /og-image.png
   Cache-Control: public, max-age=604800

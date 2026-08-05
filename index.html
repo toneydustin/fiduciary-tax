@@ -17,6 +17,7 @@
   <meta property="og:image" content="https://fiduciary.tax/og-image.png">
   <meta name="twitter:image" content="https://fiduciary.tax/og-image.png">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate" type="application/rss+xml" title="FTAS News &amp; Insights" href="https://fiduciary.tax/feed.xml">
   <link rel="stylesheet" href="style.css?v=20260805">
   <script type="application/ld+json">
   {
@@ -57,6 +58,7 @@
 </head>
 <body>
 
+  <main id="main-content">
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-eyebrow">Fiduciary Tax &amp; Accounting Services</div>
@@ -137,9 +139,9 @@
           <div><span class="cd-label">Fax</span><span class="cd-val">(850) 280-6158</span></div>
         </div>
       </div>
-      <div class="cform">
+      <form class="cform" onsubmit="handleSubmit(); return false;">
         <div class="fg">
-          <label>I am a...</label>
+          <label for="f-who">I am a...</label>
           <select id="f-who">
             <option value="">Select one...</option>
             <option>Individual taxpayer</option>
@@ -153,17 +155,19 @@
           </select>
         </div>
         <div class="fg-row">
-          <div class="fg"><label>Name</label><input type="text" id="f-name" placeholder="Your name" required autocomplete="name"></div>
-          <div class="fg"><label>Email</label><input type="email" id="f-email" placeholder="you@email.com" required autocomplete="email"></div>
+          <div class="fg"><label for="f-name">Name</label><input type="text" id="f-name" placeholder="Your name" required autocomplete="name"></div>
+          <div class="fg"><label for="f-email">Email</label><input type="email" id="f-email" placeholder="you@email.com" required autocomplete="email"></div>
         </div>
-        <div class="fg"><label>Phone (optional)</label><input type="tel" id="f-phone" placeholder="(000) 000-0000"></div>
-        <div class="fg"><label>How can we help?</label><textarea id="f-msg" placeholder="Brief description of your situation..."></textarea></div>
-        <button class="fsub" onclick="handleSubmit()">Send Message</button>
+        <div class="fg"><label for="f-phone">Phone (optional)</label><input type="tel" id="f-phone" placeholder="(000) 000-0000"></div>
+        <div class="fg"><label for="f-msg">How can we help?</label><textarea id="f-msg" placeholder="Brief description of your situation..."></textarea></div>
+        <button type="submit" class="fsub">Send Message</button>
         <div class="confirm-msg" id="confirm-msg">Thank you — we'll be in touch within one business day.</div>
         <p class="fnote">All information is kept strictly confidential.</p>
-      </div>
+      </form>
     </div>
   </div>
+
+  </main>
 
   <script src="shared.js?v=20260805"></script>
 </body>
