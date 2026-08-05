@@ -33,10 +33,9 @@ TEMPLATE = """<!DOCTYPE html>
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{title_esc}">
   <meta name="twitter:description" content="{excerpt_esc}">
+  <meta property="og:image" content="{site}/og-image.png">
+  <meta name="twitter:image" content="{site}/og-image.png">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css{asset_v}">
   <script type="application/ld+json">
   {{

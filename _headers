@@ -25,3 +25,11 @@
 # Blog post data
 /blog/posts.json
   Cache-Control: public, max-age=3600
+
+# OG image
+/og-image.png
+  Cache-Control: public, max-age=604800
+
+# Self-hosted fonts
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable

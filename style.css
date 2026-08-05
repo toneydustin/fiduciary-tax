@@ -1,3 +1,5 @@
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300 500;font-display:optional;src:url(fonts/dmsans-latin.woff2) format('woff2');}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:400 600;font-display:optional;src:url(fonts/playfairdisplay-latin.woff2) format('woff2');}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{--navy:#0B1F3A;--navy-mid:#1A3558;--gold:#B8943F;--gold-light:#D4AF6A;--cream:#F8F5EF;--text:#1A1A1A;--muted:#5A5A5A;--border:rgba(184,148,63,0.25);}
 body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--cream);font-size:16px;line-height:1.7;padding-top:91px;}
