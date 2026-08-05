@@ -36,6 +36,7 @@ TEMPLATE = """<!DOCTYPE html>
   <meta name="twitter:description" content="{excerpt_esc}">
   <meta property="og:image" content="{site}/og-image.png">
   <meta name="twitter:image" content="{site}/og-image.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="alternate" type="application/rss+xml" title="FTAS News &amp; Insights" href="{site}/feed.xml">
   <link rel="stylesheet" href="../style.css{asset_v}">
