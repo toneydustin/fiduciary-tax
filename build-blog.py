@@ -14,7 +14,7 @@ from datetime import date
 from html import escape
 
 SITE = "https://fiduciary.tax"
-ASSET_V = "?v=20260804"  # bump on each deploy to bust caches
+ASSET_V = "?v=20260805"  # bump on each deploy to bust caches
 
 TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
