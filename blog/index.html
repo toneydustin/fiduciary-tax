@@ -28,6 +28,17 @@
     </div>
   </div>
 
+  <div class="blog-subscribe" id="blogSubscribe">
+    <form class="subscribe-form" onsubmit="handleSubscribe(event)">
+      <p>Get notified when we publish new insights — no spam, just tax law updates that matter.</p>
+      <div class="subscribe-row">
+        <input type="email" id="sub-email" placeholder="you@email.com" required autocomplete="email">
+        <button type="submit" class="btn-primary" id="subBtn">Subscribe</button>
+      </div>
+      <div class="subscribe-ok" id="subOk">You're on the list — we'll be in touch.</div>
+    </form>
+  </div>
+
   <div class="blog-filters">
     <div class="blog-filters-inner" id="filterBar">
       <button class="filter-btn active" aria-pressed="true" onclick="filterPosts('all', this)">All</button>
@@ -93,6 +104,36 @@
         btn.onclick = () => filterPosts(cat, btn);
         bar.appendChild(btn);
       });
+    }
+
+    async function handleSubscribe(e) {
+      e.preventDefault();
+      const email = document.getElementById('sub-email').value.trim();
+      if (!email) return;
+      const btn = document.getElementById('subBtn');
+      btn.disabled = true; btn.style.opacity = '0.5'; btn.textContent = 'Subscribing...';
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            access_key: 'b7e6280a-0000-4b71-ab62-39eeb9ebd5b3',
+            subject: 'New Blog Subscriber — fiduciary.tax',
+            from_name: 'FTAS Blog Subscribe',
+            email: email,
+            message: 'New blog subscription request'
+          })
+        });
+        const data = await res.json();
+        if (data.success) {
+          document.getElementById('subOk').style.display = 'block';
+          btn.textContent = 'Subscribed';
+        } else {
+          btn.disabled = false; btn.style.opacity = '1'; btn.textContent = 'Subscribe';
+        }
+      } catch(err) {
+        btn.disabled = false; btn.style.opacity = '1'; btn.textContent = 'Subscribe';
+      }
     }
 
     fetch('posts.json')

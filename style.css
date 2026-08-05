@@ -216,6 +216,23 @@ footer{background:var(--navy);border-top:1px solid rgba(184,148,63,0.18);padding
 .blog-card p{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:0.75rem;}
 .blog-card-meta{font-size:11px;color:var(--muted);}
 .blog-empty{max-width:860px;margin:3rem auto;padding:0 2.5rem;text-align:center;color:var(--muted);font-size:14px;}
+.blog-subscribe{max-width:860px;margin:0 auto;padding:1.5rem 2.5rem;}
+.subscribe-form{background:#fff;border:1px solid var(--border);border-radius:6px;padding:1.25rem 1.5rem;}
+.subscribe-form p{font-size:13px;color:var(--muted);margin-bottom:0.75rem;line-height:1.5;}
+.subscribe-row{display:flex;gap:0.5rem;}
+.subscribe-row input{flex:1;padding:10px 12px;border:1px solid rgba(0,0,0,0.12);border-radius:3px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);background:var(--cream);}
+.subscribe-row .btn-primary{white-space:nowrap;padding:10px 20px;}
+.subscribe-ok{display:none;font-size:13px;color:var(--gold);margin-top:0.5rem;font-weight:500;}
+
+/* FAQ */
+.faq-section{margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border);}
+.faq-section h2{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:500;color:var(--navy);margin-bottom:1.25rem;}
+.faq-item{border:1px solid var(--border);border-radius:6px;margin-bottom:0.5rem;overflow:hidden;}
+.faq-item summary{padding:1rem 1.25rem;font-size:14px;font-weight:500;color:var(--navy);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.faq-item summary::after{content:'+';font-size:18px;color:var(--gold);flex-shrink:0;transition:transform 0.2s;}
+.faq-item[open] summary::after{content:'\2212';}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item p{padding:0 1.25rem 1rem;font-size:13.5px;color:var(--muted);line-height:1.75;margin:0;}
 
 /* BLOG POST PAGE */
 .post-hero{background:var(--navy);padding:3.5rem 2.5rem 3rem;position:relative;overflow:hidden;}
@@ -269,6 +286,9 @@ footer{background:var(--navy);border-top:1px solid rgba(184,148,63,0.18);padding
   .audience-tabs,.service-tabs,.blog-filters{padding:0 1.25rem;}
   .trust-bar{padding:0.85rem 1.25rem;}
   .blog-grid{padding:2rem 1.25rem;grid-template-columns:1fr;}
+  .subscribe-row{flex-wrap:wrap;}
+  .subscribe-row input{min-width:0;}
+  .subscribe-row .btn-primary{width:100%;}
   footer{padding:1.5rem 1.25rem;}
   .foot-inner{flex-direction:column;align-items:flex-start;}
   .foot-legal{text-align:left;}
